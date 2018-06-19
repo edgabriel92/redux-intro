@@ -32,8 +32,10 @@ store3.subscribe(() =>{
 	let checkBox = store3.getState();
 
 	if (checkBox.isChecked) {
+		//manipulate the DOM to make label say checked
 		checkboxLabelHTML.innerHTML = "checked";
 	} else {
+		//manipulate the DOM to make label say unchecked
 		checkboxLabelHTML.innerHTML = "unchecked";
 	}
 
