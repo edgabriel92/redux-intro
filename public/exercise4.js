@@ -12,12 +12,15 @@ let defaultTodos = {
 let reducer4 = (state = defaultTodos, action) => {
 
 	if (action.type == "ADD_TODO") {
-		state.todos.push(action.todoText); //state.todos = reference to lines 7-9 the state of the array
-		return state;					   //.push(action.todoText) = reference from lines 39-44/dispatch, text from input value pushed into the array
-	} else {
+		let { todoText } = action; // == let todoText = action.todoText ES6
+		
+		return {
+			todos: state.todos.concat(todoText)
+		};
+	}else {					   //.push(action.todoText) = reference from lines 39-44/dispatch, text from input value pushed into the array
 		return state;
-	}t
-}
+	};
+};
 
 let store4 = Redux.createStore(reducer4);
 
